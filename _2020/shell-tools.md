@@ -105,7 +105,7 @@ Unlike other scripting languages, bash uses a variety of special variables to re
 - `$?` - Return code of the previous command
 - `$$` - Process identification number (PID) for the current script
 - `!!` - Entire last command, including arguments. A common pattern is to execute a command only for it to fail due to missing permissions; you can quickly re-execute the command with sudo by doing `sudo !!`
-- `$_` - Last argument from the last command. If you are in an interactive shell, you can also quickly get this value by typing `Esc` followed by `.`
+- `$_` - Last argument from the last command. If you are in an interactive shell, you can also quickly get this value by typing `Esc` followed by `.` or `Alt+.`
 
 Commands will often return output using `STDOUT`, errors through `STDERR`, and a Return Code to report errors in a more script-friendly manner.
 The return code or exit status is the way scripts/commands have to communicate how execution went.
@@ -378,7 +378,7 @@ Some I frequently use are `-C` for getting **C**ontext around the matching line 
 When it comes to quickly searching through many files, you want to use `-R` since it will **R**ecursively go into directories and look for files for the matching string.
 
 But `grep -R` can be improved in many ways, such as ignoring `.git` folders, using multi CPU support, &c.
-Many `grep` alternatives have been developed, including [ack](https://beyondgrep.com/), [ag](https://github.com/ggreer/the_silver_searcher) and [rg](https://github.com/BurntSushi/ripgrep).
+Many `grep` alternatives have been developed, including [ack](https://github.com/beyondgrep/ack3), [ag](https://github.com/ggreer/the_silver_searcher) and [rg](https://github.com/BurntSushi/ripgrep).
 All of them are fantastic and pretty much provide the same functionality.
 For now I am sticking with ripgrep (`rg`), given how fast and intuitive it is. Some examples: -->
 
@@ -454,7 +454,7 @@ Có rất nhiều cách đơn giản cho bạn thử, ví dụ như viết một
 
 Với phương châm của khoá học này, bạn sẽ đối mặt với những tình huống phổ biến nhất.
 Tìm những file và/hoặc thư mục thường xuyên được sử dụng có thể được được xử lý bằng [`fasd`](https://github.com/clvv/fasd) và[`autojump`](https://github.com/wting/autojump).
-Fasd xếp hạng các files và thư mục dựa trên [_frecency_](https://developer.mozilla.org/en-US/docs/Mozilla/Tech/Places/Frecency_algorithm), nghĩa là , cả 2 _tần số_ và _gần đây_.
+Fasd xếp hạng các files và thư mục dựa trên [_frecency_](https://web.archive.org/web/20210421120120/https://developer.mozilla.org/en-US/docs/Mozilla/Tech/Places/Frecency_algorithm), nghĩa là , cả 2 _tần số_ và _gần đây_.
 Mặc định, `fasd` thêm một lệnh `z` mà bạn có thể dủng để có thể nhanh chóng `cd` chỉ với một chuỗi của thự mục _frecent_. Ví dụ Nếu bạn thường xuyên di chuyển tới `/home/user/files/cool_project` thì bạn chỉ đơn giản là sử dụng `z cool` để di chuyển tới đó. Sử dụng `autojump` thì cú pháp tương tự sẽ là `j cool`.
 
 Một vài công cụ giúp bạn nhanh chóng nắm bắt được cấu trúc thư mục : [`tree`](https://linux.die.net/man/1/tree), [`broot`](https://github.com/Canop/broot) thậm chí là một trình quản lý file toàn diện như [`nnn`](https://github.com/jarun/nnn) hoặc [`ranger`](https://github.com/ranger/ranger).

@@ -1,5 +1,6 @@
-# The Missing Semester of Your CS Education [![Build Status](https://github.com/missing-semester/missing-semester/workflows/CI/badge.svg)](https://github.com/missing-semester/missing-semester/actions?query=workflow%3ACI)
+# The Missing Semester of Your CS Education
 
+[![Build Status](https://github.com/missing-semester/missing-semester/workflows/Build/badge.svg)](https://github.com/missing-semester/missing-semester/actions?query=workflow%3ABuild) [![Links Status](https://github.com/missing-semester/missing-semester/workflows/Links/badge.svg)](https://github.com/missing-semester/missing-semester/actions?query=workflow%3ALinks)
 
 Website for the [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/) class!
 
@@ -18,11 +19,16 @@ bundle exec jekyll serve -w
 
 All the content in this course, including the website source code, lecture notes, exercises, and lecture videos is licensed under Attribution-NonCommercial-ShareAlike 4.0 International [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). See [here](https://missing.csail.mit.edu/license) for more information on contributions or translations.
 
-## Đóng Góp 
+## Đóng Góp
+
+Xin tham khảo file [CONTRIBUTING.md](contributing.md) về cách đóng góp.
 
 Nếu bạn muốn đóng góp cho việc dịch khóa học này sang tiếng Việt, hoặc biên tập và sửa chữa chính tả, hãy điền tên vào mục dưới.
 Nếu trích dẫn trong các bài đăng xin ghi nguồn cho phần tiếng Việt hoặc tiếng Anh đầy đủ.
 Thêm chi tiết xin email: anhtu.do1998@gmail.com
+
+## Status
+### Bản 2020
 
 | # | Phần                      | Dịch                                           | Biên Tập | Trạng Thái |
 |---|---------------------------|------------------------------------------------|----------|------------|
@@ -36,7 +42,11 @@ Thêm chi tiết xin email: anhtu.do1998@gmail.com
 | 8 | [command-line.md](https://missing-semester-vn.github.io/2020/command-line/)||||
 | 9 | [version-control.md](https://missing-semester-vn.github.io/2020/version-control/)|||@Đã Dịch|
 | 10| [debugging-profiling.md](https://missing-semester-vn.github.io/2020/debugging-profiling/)|||@Đang Dịch|
-| 11| [metaprogramming.md](https://missing-semester-vn.github.io/2020/metaprogramming/)||||
+| 11| [metaprogramming.md](https://missing-semester-vn.github.io/2020/metaprogramming/)|||@Đã dịch|
 | 12| [security.md](https://missing-semester-vn.github.io/2020/security/)||||
 | 13| [potpourri.md](https://missing-semester-vn.github.io/2020/potpourri/)||||
 | 14| [qa.md](https://missing-semester-vn.github.io/2020/qa/)||||
+
+### Bản 2019 (TODO)
+| # | Phần                      | Dịch                                           | Biên Tập | Trạng Thái |
+|---|---------------------------|------------------------------------------------|----------|------------|

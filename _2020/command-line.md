@@ -122,7 +122,7 @@ $ jobs
 
 A special signal is `SIGKILL` since it cannot be captured by the process and it will always terminate it immediately. However, it can have bad side effects such as leaving orphaned children processes.
 
-You can learn more about these and other signals [here](https://en.wikipedia.org/wiki/Signal_(IPC)) or typing [`man signal`](https://www.man7.org/linux/man-pages/man7/signal.7.html) or `kill -t`.
+You can learn more about these and other signals [here](https://en.wikipedia.org/wiki/Signal_(IPC)) or typing [`man signal`](https://www.man7.org/linux/man-pages/man7/signal.7.html) or `kill -l`.
 
 
 # Terminal Multiplexers
@@ -352,7 +352,7 @@ cat .ssh/id_ed25519.pub | ssh foobar@remote 'cat >> ~/.ssh/authorized_keys'
 A simpler solution can be achieved with `ssh-copy-id` where available:
 
 ```bash
-ssh-copy-id -i .ssh/id_ed25519.pub foobar@remote
+ssh-copy-id -i .ssh/id_ed25519 foobar@remote
 ```
 
 ## Copying files over SSH
@@ -410,7 +410,7 @@ Server side configuration is usually specified in `/etc/ssh/sshd_config`. Here y
 
 ## Miscellaneous
 
-A common pain when connecting to a remote server are disconnections due to shutting down/sleeping your computer or changing a network. Moreover if one has a connection with significant lag using ssh can become quite frustrating. [Mosh](https://mosh.org/), the mobile shell, improves upon ssh, allowing roaming connections, intermittent connectivity and providing intelligent local echo.
+A common pain when connecting to a remote server are disconnections due to your computer shutting down, going to sleep, or changing networks. Moreover if one has a connection with significant lag using ssh can become quite frustrating. [Mosh](https://mosh.org/), the mobile shell, improves upon ssh, allowing roaming connections, intermittent connectivity and providing intelligent local echo.
 
 Sometimes it is convenient to mount a remote folder. [sshfs](https://github.com/libfuse/sshfs) can mount a folder on a remote server
 locally, and then you can use a local editor.
@@ -495,13 +495,13 @@ Install a Linux virtual machine (or use an already existing one) for this exerci
 1. Go to `~/.ssh/` and check if you have a pair of SSH keys there. If not, generate them with `ssh-keygen -o -a 100 -t ed25519`. It is recommended that you use a password and use `ssh-agent` , more info [here](https://www.ssh.com/ssh/agent).
 1. Edit `.ssh/config` to have an entry as follows
 
-```bash
-Host vm
-    User username_goes_here
-    HostName ip_goes_here
-    IdentityFile ~/.ssh/id_ed25519
-    LocalForward 9999 localhost:8888
-```
+    ```bash
+    Host vm
+        User username_goes_here
+        HostName ip_goes_here
+        IdentityFile ~/.ssh/id_ed25519
+        LocalForward 9999 localhost:8888
+    ```
 1. Use `ssh-copy-id vm` to copy your ssh key to the server.
 1. Start a webserver in your VM by executing `python -m http.server 8888`. Access the VM webserver by navigating to `http://localhost:9999` in your machine.
 1. Edit your SSH server config by doing  `sudo vim /etc/ssh/sshd_config` and disable password authentication by editing the value of `PasswordAuthentication`. Disable root login by editing the value of `PermitRootLogin`. Restart the `ssh` service with `sudo service sshd restart`. Try sshing in again.
